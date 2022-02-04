@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: data-odf
+spec:
+  description: data-odf-example
+  sourceRepos:
+    - https://github.com/likid0/argocd-odf
+  destinations:
+    - namespace: openshift-storage
+      server: https://kubernetes.default.svc
+    - namespace: openshift-machine-api 
+      server: https://kubernetes.default.svc
+    - namespace: openshift-operators
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
