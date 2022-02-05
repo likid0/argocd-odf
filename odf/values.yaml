@@ -1,5 +1,5 @@
 ##
-# Jump App Microservices Chart values
+# ODF Chart values
 ##
 #
 
@@ -18,7 +18,12 @@ cephtools:
 
 # If in AWS deploy dedicated ODF nodes
 dedicated: 
-  enabled: false
+  enabled: true
+  aws:
+    clusterid: 'cluster20'
+    region: 'us-west-2'
+    coreosami: 'ami-2020'
+
 
 # Configure StorageCluster
 osds:
