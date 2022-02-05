@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: odf-deploy
+  name: odf
 spec:
   destination:
     name: ''
@@ -11,9 +11,4 @@ spec:
   source:
     path: odf
     repoURL: 'https://github.com/likid0/argocd-odf'
-    targetRevision: odf
-  project: data-pipeline
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: false
+  project: data-odf
