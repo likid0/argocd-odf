@@ -20,10 +20,12 @@ cephtools:
 dedicated: 
   enabled: true
   aws:
-    clusterid: 'cluster20'
-    region: 'us-west-2'
-    coreosami: 'ami-2020'
-
+    #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
+    clusterid: 'cluster2-qgsvw'
+    #youn can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}' 
+    region: 'us-west-1'
+    #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}'
+    coreosami: 'ami-06246bd13108ba660'
 
 # Configure StorageCluster
 osds:
