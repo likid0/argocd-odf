@@ -1,0 +1,30 @@
+##
+# Jump App Microservices Chart values
+##
+#
+
+# ODF Version/Channel
+odf:
+  channel: 'stable-4.9'
+
+# Deploy RGW with ODF
+rgw: 
+  enabled: false
+  ssl: false
+
+# Deploy CephTools with ODF
+cephtools:
+  enabled: false
+
+# If in AWS deploy dedicated ODF nodes
+dedicated: 
+  enabled: false
+
+# Configure StorageCluster
+osds:
+  encryption:
+    enabled: true
+  replicas: 2
+  scname: 'gp2'
+  disksize: '512Gi'
+  portable: true

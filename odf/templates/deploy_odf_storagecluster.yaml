@@ -1,0 +1,53 @@
+---
+apiVersion: ocs.openshift.io/v1
+kind: StorageCluster
+metadata:
+  annotations:
+    uninstall.ocs.openshift.io/cleanup-policy: delete
+    uninstall.ocs.openshift.io/mode: graceful
+  finalizers:
+  - storagecluster.ocs.openshift.io
+  name: ocs-storagecluster
+  namespace: openshift-storage
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  arbiter: {}
+  encryption:
+  {{- if $.Values.osds.encryption.enabled }}
+    enable: true
+  {{- else}}
+    enable: false
+  {{- end }}
+    kms: {}
+  externalStorage: {}
+  managedResources:
+    cephBlockPools: {}
+    cephConfig: {}
+    cephDashboard: {}
+    cephFilesystems: {}
+    cephObjectStoreUsers: {}
+    cephObjectStores: {}
+  nodeTopologies: {}
+  storageDeviceSets:
+  - config: {}
+    count: 1
+    dataPVCTemplate:
+      metadata: {}
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ $.Values.osds.disksize }}
+        storageClassName: {{ $.Values.osds.scname }}
+        volumeMode: Block
+      status: {}
+    name: ocs-deviceset-{{ $.Values.osds.scname }}
+    placement: {}
+    portable: true
+    preparePlacement: {}
+    replica: {{ $.Values.osds.replicas }}
+    resources: {}
+  version: 4.9.0
