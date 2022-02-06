@@ -35,23 +35,23 @@ odf:
 
 # Deploy RGW with ODF
 rgw: 
-  enabled: false
+  enabled: true
   ssl: false
 
 # Deploy CephTools with ODF
 cephtools:
-  enabled: false
+  enabled: true
 
 # If in AWS deploy dedicated ODF nodes
 dedicated: 
   enabled: true
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
-    clusterid: 'cluster2-qgsvw'
+    clusterid: 'cluster1-pfct2'
     #youn can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}' 
-    region: 'us-west-1'
+    region: 'us-east-2'
     #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}'
-    coreosami: 'ami-06246bd13108ba660'
+    coreosami: 'ami-03d9208319c96db0c'
 
 # Configure StorageCluster
 osds:
