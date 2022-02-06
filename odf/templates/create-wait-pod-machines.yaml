@@ -1,4 +1,4 @@
-#{{- if $.Values.dedicated.enabled }}
+{{- if $.Values.dedicated.enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -18,4 +18,4 @@ spec:
       serviceAccount: query-pods
       serviceAccountName: query-pods
       restartPolicy: Never
-#{{- end }}
+{{- end }}
