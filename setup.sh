@@ -5,7 +5,6 @@
 
 # Create Namespaces in order to deploy applications
 echo "Creating namespaces..."
-sleep 10
 oc new-project gitops-argocd
 
 # Install Operators
@@ -19,11 +18,6 @@ waitoperatorpod() {
   sleep 20
 }
 
-waitknativeserving() {
-  sleep 10
-  oc get pods -n knative-serving | grep ${1} | awk '{print "oc wait --for condition=Ready -n knative-serving pod/" $1 " --timeout 300s"}' | sh
-  sleep 20
-}
 
 echo "Waiting for Operators to be ready..."
 waitoperatorpod gitops
@@ -43,4 +37,4 @@ oc create secret generic argocd-default-cluster-config --from-literal=namespaces
 oc adm policy add-cluster-role-to-user cluster-admin -z argocd-argocd-application-controller -n gitops-argocd
 
 # Add the namespaces where you have argocd deployed
-oc patch subscriptions.operators.coreos.com openshift-gitops-operator -n openshift-operators --patch-file bootstrap/07_patch.yaml --type merge
+oc patch subscriptions.operators.coreos.com openshift-gitops-operator -n openshift-operators --patch-file bootstrap/patch/07_patch.yaml --type merge
