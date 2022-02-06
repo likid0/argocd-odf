@@ -33,24 +33,24 @@ spec:
   resources:
     mon:
       requests:
-        cpu: {{ .Values.ocs.mon.requests.cpu }}
-        memory: {{ .Values.ocs.mon.requests.memory }}
+        cpu: {{ .Values.odf.mon.requests.cpu }}
+        memory: {{ .Values.odf.mon.requests.memory }}
     mds:
       requests:
-        cpu: {{ .Values.ocs.mds.requests.cpu }}
-        memory: {{ .Values.ocs.mds.requests.memory }}
+        cpu: {{ .Values.odf.mds.requests.cpu }}
+        memory: {{ .Values.odf.mds.requests.memory }}
     mgr:
       requests:
-        cpu: {{ .Values.ocs.mgr.requests.cpu }}
-        memory: {{ .Values.ocs.mgr.requests.memory }}
+        cpu: {{ .Values.odf.mgr.requests.cpu }}
+        memory: {{ .Values.odf.mgr.requests.memory }}
     noobaa-core:
       requests:
-        cpu: {{ .Values.ocs.noobaacore.requests.cpu }}
-        memory: {{ .Values.ocs.noobaacore.requests.memory }}
+        cpu: {{ .Values.odf.noobaacore.requests.cpu }}
+        memory: {{ .Values.odf.noobaacore.requests.memory }}
     noobaa-db:
       requests:
-        cpu: {{ .Values.ocs.noobaadb.requests.cpu }}
-        memory: {{ .Values.ocs.noobaadb.requests.memory }}
+        cpu: {{ .Values.odf.noobaadb.requests.cpu }}
+        memory: {{ .Values.odf.noobaadb.requests.memory }}
   storageDeviceSets:
   - config: {}
     count: 1
