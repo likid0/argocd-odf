@@ -1,0 +1,18 @@
+##
+# ArgoCD values
+##
+
+## Helm Repo GIT
+helmRepoUrl: https://github.com/likid0/argocd-odf
+
+# ArgoCD apps definition
+apps:
+  deploy-odf:
+    branch: main
+    enabled: true
+    path: odf/
+
+namespaces:
+  - openshift-storage
+  - openshift-machine-api
+  - openshift-operators

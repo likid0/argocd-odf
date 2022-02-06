@@ -6,14 +6,12 @@ metadata:
 spec:
   description: data-odf-example
   sourceRepos:
-    - https://github.com/likid0/argocd-odf
+    - '{{ $.Values.helmRepoUrl }}'
   destinations:
-    - namespace: openshift-storage
+{{- range $ns := $.Values.namespaces }}
+    - namespace: {{ $ns }}
       server: https://kubernetes.default.svc
-    - namespace: openshift-machine-api 
-      server: https://kubernetes.default.svc
-    - namespace: openshift-operators
-      server: https://kubernetes.default.svc
+{{- end }} 
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
