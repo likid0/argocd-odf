@@ -4,7 +4,7 @@ kind: Job
 metadata:
   name: wait-pod-job-machineset
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "-1"
     compare-options: IgnoreExtraneous
 spec:
   ttlSecondsAfterFinished: 4600
