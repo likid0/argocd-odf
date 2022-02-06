@@ -14,3 +14,11 @@ spec:
     policy: |
       g, system:cluster-admins, role:admin
     scopes: '[groups]'
+  controller:
+      resources:
+        limits:
+          cpu: '2'
+          memory: 4Gi
+        requests:
+          cpu: 250m
+          memory: 1Gi
