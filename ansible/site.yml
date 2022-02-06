@@ -1,0 +1,6 @@
+---
+- name: odf bootstrap playbook
+  hosts: localhost
+  connection: local
+  roles:
+    - bootstrap

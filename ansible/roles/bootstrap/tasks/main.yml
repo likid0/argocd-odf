@@ -1,0 +1,2 @@
+- name: ODF bootstrap
+  include_tasks: odf.yml

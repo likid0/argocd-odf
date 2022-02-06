@@ -1,0 +1,13 @@
+#global
+pattern_repo_dir: "{{ lookup('env', 'PWD') }}"
+helm_charts_dir: ""
+helm_output_dir: /tmp
+
+odf:
+  template_dir: cephobjectstore
+  namespace: openshift-storage
+  expected_crds:
+    - backingstores.noobaa.io
+    - bucketclasses.noobaa.io
+    - noobaas.noobaa.io
+    - objectbucketclaims.objectbucket.io
