@@ -30,6 +30,27 @@ spec:
     cephObjectStoreUsers: {}
     cephObjectStores: {}
   nodeTopologies: {}
+  resources:
+    mon:
+      requests:
+        cpu: {{ .Values.ocs.mon.requests.cpu }}
+        memory: {{ .Values.ocs.mon.requests.memory }}
+    mds:
+      requests:
+        cpu: {{ .Values.ocs.mds.requests.cpu }}
+        memory: {{ .Values.ocs.mds.requests.memory }}
+    mgr:
+      requests:
+        cpu: {{ .Values.ocs.mgr.requests.cpu }}
+        memory: {{ .Values.ocs.mgr.requests.memory }}
+    noobaa-core:
+      requests:
+        cpu: {{ .Values.ocs.noobaacore.requests.cpu }}
+        memory: {{ .Values.ocs.noobaacore.requests.memory }}
+    noobaa-db:
+      requests:
+        cpu: {{ .Values.ocs.noobaadb.requests.cpu }}
+        memory: {{ .Values.ocs.noobaadb.requests.memory }}
   storageDeviceSets:
   - config: {}
     count: 1

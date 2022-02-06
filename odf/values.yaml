@@ -4,8 +4,34 @@
 #
 
 # ODF Version/Channel
+# Resource limits per service
 odf:
   channel: 'stable-4.9'
+  mon:
+    requests:
+       cpu: 1
+       memory: 2Gi
+  mds:
+    requests:
+      cpu: 3
+      memory: 8Gi
+  mgr:
+    requests:
+      cpu: 1
+      memory: 3Gi
+  noobaacore:
+    requests:
+      cpu: 1
+      memory: 4Gi
+  noobaadb:
+    requests:
+      cpu: 1
+      memory: 4Gi
+  osd:
+    requests:
+      cpu: 2
+      memory: 5Gi
+
 
 # Deploy RGW with ODF
 rgw: 
