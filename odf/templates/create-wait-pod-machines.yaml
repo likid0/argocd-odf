@@ -1,0 +1,21 @@
+#{{- if $.Values.dedicated.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wait-pod-job-machineset
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+    compare-options: IgnoreExtraneous
+spec:
+  ttlSecondsAfterFinished: 4600
+  template:
+    spec:
+      containers:
+      - name: wait-pod
+        command: ["/bin/sh","-c"]
+        args: ["sleep 60 ; oc login https://kubernetes.default.svc.cluster.local --token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token) --insecure-skip-tls-verify; while [ $(oc get machines -n openshift-machine-api | grep -E '(workerocs.*Running)' | wc -l) -lt 3 ] ; do echo 'machines not ready' ; sleep 10 ; done"]
+        image:  openshift/origin-cli:latest 
+      serviceAccount: query-pods
+      serviceAccountName: query-pods
+      restartPolicy: Never
+#{{- end }}
