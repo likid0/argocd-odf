@@ -33,7 +33,7 @@ odf:
       memory: 5Gi
 
 
-# Deploy RGW with ODF
+# Deploy RGW with ODF in AWS
 rgw: 
   enabled: true
   ssl: false
@@ -42,7 +42,7 @@ rgw:
 cephtools:
   enabled: true
 
-# If in AWS deploy dedicated ODF nodes
+# If Cluster in AWS and dedicated enabled it will deploy 3 new dedicated ODF nodes.
 dedicated: 
   enabled: true
   aws:
@@ -57,7 +57,7 @@ dedicated:
 osds:
   encryption:
     enabled: true
-  replicas: 2
+  replicas: 3
   scname: 'gp2'
   disksize: '512Gi'
   portable: true
