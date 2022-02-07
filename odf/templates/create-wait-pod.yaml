@@ -12,7 +12,7 @@ spec:
       containers:
       - name: wait-pod
         command: ["/bin/sh","-c"]
-        args: ["sleep 120 ; oc login https://kubernetes.default.svc.cluster.local --token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token) --insecure-skip-tls-verify; for i in 'name=ocs-operator' 'app=noobaa' 'app=rook-ceph-operator' ; do oc wait --for condition=Ready pod  --selector=${i} -n openshift-storage --timeout=180s ; sleep 5 ; done"]
+        args: ["sleep 180 ; oc login https://kubernetes.default.svc.cluster.local --token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token) --insecure-skip-tls-verify; for i in 'name=ocs-operator' 'app=noobaa' 'app=rook-ceph-operator' ; do oc wait --for condition=Ready pod  --selector=${i} -n openshift-storage --timeout=180s ; sleep 5 ; done"]
         image:  openshift/origin-cli:latest 
       serviceAccount: query-pods
       serviceAccountName: query-pods
