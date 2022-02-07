@@ -11,6 +11,7 @@ apps:
     branch: main
     enabled: true
     path: odf/
+    autosync: true
 
 namespaces:
   - openshift-storage
