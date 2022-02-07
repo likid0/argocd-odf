@@ -1,10 +1,17 @@
-# argocd-odf
-**argocd-odf deployment**
+# argocd-odf Deployment
 
 Modify the values as needed:
 
-For argocd deployment:  bootstrap/values.yaml
-Related to ODF deployment: odf/values.yaml
+- Argocd deployment: 
+
+```
+bootstrap/values.yaml
+```
+- Related to ODF deployment: 
+
+```
+odf/values.yaml
+```
 
 Then login into your OCP cluster with a cluster-admin account 
 
