@@ -13,6 +13,8 @@ bootstrap/values.yaml
 odf/values.yaml
 ```
 
+Push your changes to your remote branch in GIT.
+
 Then login into your OCP cluster with a cluster-admin account 
 
 ```

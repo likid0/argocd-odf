@@ -26,11 +26,16 @@ spec:
         machine.openshift.io/cluster-api-machine-type: workerocs
         machine.openshift.io/cluster-api-machineset: {{ $.Values.dedicated.aws.clusterid }}-workerocs-{{ $.Values.dedicated.aws.region }}a
     spec:
+      taints:
+      - effect: NoSchedule
+        key: node.ocs.openshift.io/storage
+        value: "true"
       metadata:
         creationTimestamp: null
         labels:
           cluster.ocs.openshift.io/openshift-storage: ""
           node-role.kubernetes.io/worker: ""
+          node-role.kubernetes.io/infra: ""
       providerSpec:
         value:
           ami:
@@ -96,11 +101,16 @@ spec:
         machine.openshift.io/cluster-api-machine-type: workerocs
         machine.openshift.io/cluster-api-machineset: {{ $.Values.dedicated.aws.clusterid }}-workerocs-{{ $.Values.dedicated.aws.region }}b
     spec:
+      taints:
+      - effect: NoSchedule
+        key: node.ocs.openshift.io/storage
+        value: "true"
       metadata:
         creationTimestamp: null
         labels:
           cluster.ocs.openshift.io/openshift-storage: ""
           node-role.kubernetes.io/worker: ""
+          node-role.kubernetes.io/infra: ""
       providerSpec:
         value:
           ami:
@@ -166,11 +176,16 @@ spec:
         machine.openshift.io/cluster-api-machine-type: workerocs
         machine.openshift.io/cluster-api-machineset: {{ $.Values.dedicated.aws.clusterid }}-workerocs-{{ $.Values.dedicated.aws.region }}c
     spec:
+      taints:
+      - effect: NoSchedule
+        key: node.ocs.openshift.io/storage
+        value: "true"
       metadata:
         creationTimestamp: null
         labels:
           cluster.ocs.openshift.io/openshift-storage: ""
           node-role.kubernetes.io/worker: ""
+          node-role.kubernetes.io/infra: ""
       providerSpec:
         value:
           ami:
