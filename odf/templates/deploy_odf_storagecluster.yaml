@@ -74,5 +74,10 @@ spec:
     portable: true
     preparePlacement: {}
     replica: {{ $.Values.osds.replicas }}
-    resources: {}
-  version: 4.9.0
+    resources:
+        limits:
+          cpu: '{{ .Values.odf.osd.limits.cpu }}'
+          memory: {{ .Values.odf.osd.limits.memory }}
+        requests:
+          cpu: '{{ .Values.odf.osd.requests.cpu }}'
+          memory: {{ .Values.odf.osd.requests.memory }}

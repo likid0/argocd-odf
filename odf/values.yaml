@@ -31,6 +31,9 @@ odf:
     requests:
       cpu: 2
       memory: 5Gi
+    limits:
+      cpu: 3
+      memory: 7Gi
 
 
 # Deploy RGW with ODF in AWS
