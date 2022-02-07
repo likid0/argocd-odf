@@ -29,6 +29,10 @@ spec:
     cephFilesystems: {}
     cephObjectStoreUsers: {}
     cephObjectStores: {}
+  {{- if not $.Values.mcg.enabled }}
+  multiCloudGateway:
+    reconcileStrategy: ignore
+  {{- end }}
   nodeTopologies: {}
   resources:
     mon:

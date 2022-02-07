@@ -13,5 +13,4 @@ spec:
   name: odf-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: odf-operator.v4.9.1
-
+  startingCSV: odf-operator.v4.9.2
