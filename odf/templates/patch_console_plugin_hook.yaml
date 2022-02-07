@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: wait-pod-job
+  name: enable-odf-plugin
   annotations:
     argocd.argoproj.io/sync-wave: "0"
     argocd.argoproj.io/hook: "PostSync"
