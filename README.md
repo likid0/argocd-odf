@@ -19,7 +19,7 @@ Then login into your OCP cluster with a cluster-admin account
 $ oc login  https://host:6443 -u XXX  -p XX
 ```
 
-and run the setup script script.sh
+and run the setup script to start the deployment 
 
 ```
 $ bash script.sh
