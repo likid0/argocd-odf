@@ -17,3 +17,4 @@ namespaces:
   - openshift-storage
   - openshift-machine-api
   - openshift-operators
+  - gitops-argocd
