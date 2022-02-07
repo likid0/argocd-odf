@@ -15,6 +15,6 @@ spec:
         command: ["/bin/sh","-c"]
         args: ['oc login https://kubernetes.default.svc.cluster.local --token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token) --insecure-skip-tls-verify ; oc patch consoles.operator.openshift.io cluster --patch ''{ "spec": { "plugins": ["odf-console"] } }'' --type=merge']
         image: openshift/origin-cli:latest 
-      serviceAccount: ocs-operator
-      serviceAccountName: ocs-operator
+      serviceAccount: argocd-argocd-application-controller
+      serviceAccountName: argocd-argocd-application-controller
       restartPolicy: Never
