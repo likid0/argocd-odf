@@ -40,7 +40,7 @@ rgw:
 
 # If enabled is set to False Nooba/Multicloud gateway will not be deployed
 mcg:
-  enabled: false
+  enabled: true
 
 # Deploy CephTools with ODF
 cephtools:
@@ -51,7 +51,7 @@ dedicated:
   enabled: true
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
-    clusterid: 'cluster1-5tbnp'
+    clusterid: 'cluster1-tgdgx'
     #youn can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}' 
     region: 'us-east-2'
     #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}'
