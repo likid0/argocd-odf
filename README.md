@@ -24,5 +24,5 @@ $ oc login  https://host:6443 -u XXX  -p XX
 and run the setup script to start the deployment 
 
 ```
-$ bash script.sh
+$ bash setup.sh
 ```
