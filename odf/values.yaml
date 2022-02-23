@@ -52,7 +52,7 @@ mcg:
 cephtools:
   enabled: true
 
-# If OCP Cluster is deployed in AWS and dedicated option enabled it will deploy 3 ODF workers using machinesets one per AZ, .
+# If OCP Cluster is deployed in AWS and dedicated option enabled it will deploy 3 ODF workers(m5.4xlarge) using machinesets one per AZ, .
 dedicated: 
   enabled: true
   aws:
