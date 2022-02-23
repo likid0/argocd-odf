@@ -4,9 +4,11 @@
 #
 
 # ODF Version/Channel
-# Resource limits per service
+
 odf:
+# ODF Version/Channel
   channel: 'stable-4.9'
+# Resource limits per service
   mon:
     requests:
        cpu: 1
@@ -36,12 +38,13 @@ odf:
       memory: 7Gi
 
 
-# Deploy RGW with ODF in AWS
+# If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
   enabled: true
+# Not implemented WIP
   ssl: false
 
-# If enabled is set to False Nooba/Multicloud gateway will not be deployed
+# If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.
 mcg:
   enabled: true
 
@@ -49,7 +52,7 @@ mcg:
 cephtools:
   enabled: true
 
-# If Cluster in AWS and dedicated enabled it will deploy 3 new dedicated ODF nodes.
+# If OCP Cluster is deployed in AWS and dedicated option enabled it will deploy 3 ODF workers using machinesets one per AZ, .
 dedicated: 
   enabled: true
   aws:
@@ -62,9 +65,13 @@ dedicated:
 
 # Configure StorageCluster
 osds:
+#Enable cluster OSD encription
   encryption:
     enabled: true
+#Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
+#Storage Class that will be used to provision the ODF OSDs.
   scname: 'gp2'
+#Size of Each PV that will be provisioned to be used by the OSDs.
   disksize: '512Gi'
   portable: true
