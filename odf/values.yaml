@@ -46,7 +46,7 @@ rgw:
 
 # If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.
 mcg:
-  enabled: true
+  enabled: false
 
 # Deploy CephTools with ODF
 cephtools:
