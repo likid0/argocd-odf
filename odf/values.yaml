@@ -57,11 +57,11 @@ dedicated:
   enabled: true
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
-    clusterid: 'cluster-9vxgq-26vd4'
+    clusterid: 'cluster-73f0-vcq7b'
     #youn can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}' 
-    region: 'us-east-2'
-    #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}'
-    coreosami: 'ami-03d9208319c96db0c'
+    region: 'us-east-1'
+    #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.ami.id}'
+    coreosami: 'ami-0d5f9982f029fbc14'
 
 # Configure StorageCluster
 osds:

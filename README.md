@@ -1,5 +1,6 @@
 # argocd-odf Deployment
 
+
 Modify the values as needed:
 
 - Argocd deployment: 
@@ -13,15 +14,13 @@ bootstrap/values.yaml
 odf/values.yaml
 ```
 
-Push your changes to your remote branch in GIT.
-
 Then login into your OCP cluster with a cluster-admin account 
 
 ```
 $ oc login  https://host:6443 -u XXX  -p XX
 ```
 
-and run the setup script to start the deployment 
+Run the setup script to start the deployment, ArgoCD will get bootstraped and ODF Deployed.
 
 ```
 $ bash setup.sh
