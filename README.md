@@ -1,7 +1,9 @@
 # argocd-odf Deployment
 
+1. Fork this Github Repo: https://github.com/likid0/argocd-odf/
 
-Modify the values as needed:
+
+2. Modify the values/variables for the Helm charts as needed:
 
 - Argocd deployment: 
 
@@ -14,13 +16,15 @@ bootstrap/values.yaml
 odf/values.yaml
 ```
 
-Then login into your OCP cluster with a cluster-admin account 
+3. Commit your variable modifications to your forked repository. 
+
+4. Then login into your OCP cluster with a cluster-admin account 
 
 ```
 $ oc login  https://host:6443 -u XXX  -p XX
 ```
 
-Run the setup script to start the deployment, ArgoCD will get bootstraped and ODF Deployed.
+5. Run the setup script to start the deployment, ArgoCD will get bootstraped and ODF Deployed.
 
 ```
 $ bash setup.sh
