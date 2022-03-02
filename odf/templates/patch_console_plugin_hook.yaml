@@ -12,9 +12,17 @@ spec:
     spec:
       containers:
       - name: enable-odf-plugin
-        command: ["/bin/sh","-c"]
-        args: ['oc login https://kubernetes.default.svc.cluster.local --token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token) --insecure-skip-tls-verify ; oc patch consoles.operator.openshift.io cluster --patch ''{ "spec": { "plugins": ["odf-console"] } }'' --type=merge']
-        image: openshift/origin-cli:latest 
+        command:
+            - /bin/bash
+            - -c
+            - |
+              echo "Checking if the ODF operator has finished it's deployment"
+              oc patch consoles.operator.openshift.io cluster --patch ''{ "spec": { "plugins": ["odf-console"] } }'' --type=merge'
+              if [ $? = 0 ]
+              then
+                  echo "ODF console enabled, patch was applied ok"
+              fi
+        image: registry.redhat.io/openshift4/ose-cli:v4.7
       serviceAccount: argocd-argocd-application-controller
       serviceAccountName: argocd-argocd-application-controller
       restartPolicy: Never

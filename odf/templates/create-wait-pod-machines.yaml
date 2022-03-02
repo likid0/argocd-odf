@@ -7,15 +7,26 @@ metadata:
     argocd.argoproj.io/sync-wave: "-1"
     compare-options: IgnoreExtraneous
 spec:
-  ttlSecondsAfterFinished: 4600
   template:
     spec:
       containers:
       - name: wait-pod
-        command: ["/bin/sh","-c"]
-        args: ["sleep 60 ; oc login https://kubernetes.default.svc.cluster.local --token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token) --insecure-skip-tls-verify; while [ $(oc get machines -n openshift-machine-api | grep -E '(workerocs.*Running)' | wc -l) -lt 3 ] ; do echo 'machines not ready' ; sleep 10 ; done"]
-        image:  openshift/origin-cli:latest 
+        command:
+            - /bin/bash
+            - -c
+            - |
+              set -x
+              echo "Checking if the Machines from the ODF Machineset have finished deploying"
+              sleep 60
+              while [ $(oc get machines -n openshift-machine-api | grep -E '(workerocs.*Running)' | wc -l) -lt 3 ]
+              do
+                  echo 'machines not ready'
+                  sleep 10
+              done
+              echo "ODF Machine worker nodes have finished the deployment" 
+        image: registry.redhat.io/openshift4/ose-cli:v4.7
       serviceAccount: query-pods
       serviceAccountName: query-pods
       restartPolicy: Never
+      terminationGracePeriodSeconds: 30
 {{- end }}
