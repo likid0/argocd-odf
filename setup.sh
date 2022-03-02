@@ -31,10 +31,10 @@ helm template ./bootstrap/  --debug --namespace gitops-argocd  | oc apply -f -
 
 #Some fixes to be removed
 #For argocd to allow deployment of cluster resources outside of namespace
-oc create secret generic argocd-default-cluster-config --from-literal=namespaces=gitops-argocd --from-literal=server=https://kubernetes.default.svc --from-literal=config={"tlsClientConfig":{"insecure":false}} --from-literal=name=in-cluster --from-literal=clusterResources=true= --dry-run=client  -o yaml  | oc replace -f -
+#oc create secret generic argocd-default-cluster-config --from-literal=namespaces=gitops-argocd --from-literal=server=https://kubernetes.default.svc --from-literal=config={"tlsClientConfig":{"insecure":false}} --from-literal=name=in-cluster --from-literal=clusterResources=true= --dry-run=client  -o yaml  | oc replace -f -
 
 #Not for final users, so we can deploy ODF in openshift-storage namespace
-oc adm policy add-cluster-role-to-user cluster-admin -z argocd-argocd-application-controller -n gitops-argocd
+#oc adm policy add-cluster-role-to-user cluster-admin -z argocd-argocd-application-controller -n gitops-argocd
 
 #Important warning: Do not blindly elevate the permissions of application delivery instances to be cluster scoped. 
 #The instances you elevate should always be managed by an administrative team, not by application delivery teams.
