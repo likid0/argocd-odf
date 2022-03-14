@@ -57,7 +57,7 @@ dedicated:
   enabled: true
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
-    clusterid: 'cluster-6h9sf-62b56'
+    clusterid: 'cluster-tlhvx-wmzb6'
     #youn can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}' 
     region: 'us-east-2'
     #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.ami.id}'
