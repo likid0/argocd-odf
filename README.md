@@ -16,7 +16,7 @@ bootstrap/values.yaml
 odf/values.yaml
 ```
 
-3. Commit your variable modifications to your forked repository. 
+3. Commit and push the modifications you made to the values.yaml files to your forked repository. 
 
 4. Then login into your OCP cluster with a cluster-admin account 
 
