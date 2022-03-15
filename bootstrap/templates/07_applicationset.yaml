@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+ name: apm-server
+spec:
+ generators:
+ - list:
+     elements:
+     - cluster: cluster1-pro
+       url: https://url1
+     - cluster: cluster2-dev
+       url: https://url2
+ template:
+   metadata:
+     name: '{{cluster}}-odf'
+   spec:
+     project: data-odf
+     source:
+       helm:
+         valueFiles:
+           - values-{{cluster}}.yaml
+         releaseName: odf-argo
+       path: odf/
+       branch: main
+       repoURL: https://github.com/likid0/argocd-odf
