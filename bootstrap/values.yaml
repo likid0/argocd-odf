@@ -20,5 +20,5 @@ namespaces:
   - gitops-argocd
 
 argoclusters:
-  - cluster-pro
+  - cluster-prod
   - cluster-dev
