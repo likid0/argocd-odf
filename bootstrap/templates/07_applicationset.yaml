@@ -21,5 +21,5 @@ spec:
            - values-{{cluster}}.yaml
          releaseName: odf-argo
        path: odf/
-       branch: main
+       branch: applicationsets
        repoURL: https://github.com/likid0/argocd-odf
