@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+ name: odf-appset
+spec:
+ generators:
+ - list:
+     elements:
+{{- range $clus := $.Values.argoclusters }}
+     - cluster: {{ $clus }}
+       url: {{ $clus }}
+{{- end }}
+ template:
+   metadata:
+     name: {{` '{{cluster}}-odf' `}}
+   spec:
+     project: data-odf
+     source:
+       helm:
+         valueFiles:
+           - {{` 'values-{{cluster}}.yaml' `}}
+         releaseName: odf-argo
+       path: odf/
+       branch: applicationsets
+       repoURL: https://github.com/likid0/argocd-odf
+     destination:
+        name: {{` '{{url}}' `}}
+        namespace: openshift-storage

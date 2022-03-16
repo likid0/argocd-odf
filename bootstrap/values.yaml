@@ -18,3 +18,7 @@ namespaces:
   - openshift-machine-api
   - openshift-operators
   - gitops-argocd
+
+argoclusters:
+  - cluster-pro
+  - cluster-dev

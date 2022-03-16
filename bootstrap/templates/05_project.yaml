@@ -8,10 +8,8 @@ spec:
   sourceRepos:
     - '{{ $.Values.helmRepoUrl }}'
   destinations:
-{{- range $ns := $.Values.namespaces }}
-    - namespace: {{ $ns }}
-      server: https://kubernetes.default.svc
-{{- end }} 
+    - namespace: '*'
+      server: '*'
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
