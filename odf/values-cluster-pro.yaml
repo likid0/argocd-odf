@@ -7,7 +7,7 @@
 
 odf:
 # ODF Version/Channel
-  channel: '4.9'
+  channel: 'stable-4.9'
 # Resource limits per service
   mon:
     requests:
