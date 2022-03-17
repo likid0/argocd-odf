@@ -8,7 +8,7 @@ helmRepoUrl: https://github.com/likid0/argocd-odf
 # ArgoCD apps definition
 apps:
   deploy-odf:
-    branch: main
+    branch: applicationsets
     enabled: true
     path: odf/
     autosync: true
@@ -20,5 +20,5 @@ namespaces:
   - gitops-argocd
 
 argoclusters:
-  - cluster-prod
+  - cluster-pro
   - cluster-dev

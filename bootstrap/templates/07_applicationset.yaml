@@ -1,3 +1,4 @@
+{{- range $key, $val := $.Values.apps }}
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -20,9 +21,10 @@ spec:
          valueFiles:
            - {{` 'values-{{cluster}}.yaml' `}}
          releaseName: odf-argo
-       path: odf/
-       branch: applicationsets
-       repoURL: https://github.com/likid0/argocd-odf
+       path: '{{ $val.path }}'
+       repoURL: '{{ $.Values.helmRepoUrl }}'
+       targetRevision: '{{ $val.branch }}'
      destination:
         name: {{` '{{url}}' `}}
         namespace: openshift-storage
+{{- end }}
