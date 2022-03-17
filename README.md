@@ -1,4 +1,4 @@
-# argocd-odf Deployment
+# argocd-odf Multi Cluster Deployment 
 
 1. Fork this Github Repo: https://github.com/likid0/argocd-odf/
 
