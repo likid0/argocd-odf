@@ -41,7 +41,6 @@ odf:
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
   enabled: false
-# Not implemented WIP
   ssl: false
 
 # If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.
@@ -67,7 +66,7 @@ dedicated:
 osds:
 #Enable cluster OSD encription
   encryption:
-    enabled: true
+    enabled: false
 #Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
 #Storage Class that will be used to provision the ODF OSDs.
