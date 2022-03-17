@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "0"
     argocd.argoproj.io/hook: "PostSync"
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
-  namespace: gitops-argocd
+  namespace: openshift-gitops
 spec:
   template:
     spec:
@@ -25,6 +25,6 @@ spec:
                   echo "Failed to patch console"
               fi
         image: registry.redhat.io/openshift4/ose-cli:v4.7
-      serviceAccount: argocd-argocd-application-controller
-      serviceAccountName: argocd-argocd-application-controller
+      serviceAccount: openshift-gitops-argocd-application-controller
+      serviceAccountName: openshift-gitops-argocd-application-controller
       restartPolicy: Never
