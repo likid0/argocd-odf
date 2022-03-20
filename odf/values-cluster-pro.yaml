@@ -56,7 +56,7 @@ dedicated:
   enabled: true
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
-    clusterid: 'cluster-f5xtp-bnqf4'
+    clusterid: 'cluster-qcwjd-pgtqt'
     #youn can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}' 
     region: 'us-east-2'
     #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.ami.id}'
@@ -72,5 +72,5 @@ osds:
 #Storage Class that will be used to provision the ODF OSDs.
   scname: 'gp2'
 #Size of Each PV that will be provisioned to be used by the OSDs.
-  disksize: '512Gi'
+  disksize: '2TiB'
   portable: true
