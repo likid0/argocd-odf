@@ -41,6 +41,7 @@ odf:
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
   enabled: true
+# Enable/Disable RGW SSL
   ssl: false
 
 # If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.

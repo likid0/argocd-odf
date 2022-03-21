@@ -41,6 +41,7 @@ odf:
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
   enabled: false
+# Enable/Disable RGW SSL
   ssl: false
 
 # If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.
@@ -72,5 +73,5 @@ osds:
 #Storage Class that will be used to provision the ODF OSDs.
   scname: 'gp2'
 #Size of Each PV that will be provisioned to be used by the OSDs.
-  disksize: '2TiB'
+  disksize: '512Gi'
   portable: true
