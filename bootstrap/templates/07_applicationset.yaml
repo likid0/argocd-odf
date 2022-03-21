@@ -9,7 +9,6 @@ spec:
      elements:
 {{- range $clus := $.Values.argoclusters }}
      - cluster: {{ $clus }}
-       url: {{ $clus }}
 {{- end }}
  template:
    metadata:
@@ -25,6 +24,6 @@ spec:
        repoURL: '{{ $.Values.helmRepoUrl }}'
        targetRevision: '{{ $val.branch }}'
      destination:
-        name: {{` '{{url}}' `}}
+        name: {{` '{{cluster}}' `}}
         namespace: openshift-storage
 {{- end }}
