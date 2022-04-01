@@ -46,7 +46,7 @@ rgw:
 
 # If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.
 mcg:
-  enabled: false
+  enabled: true
 
 # Deploy CephTools with ODF
 cephtools:
@@ -54,7 +54,7 @@ cephtools:
 
 # If OCP Cluster is deployed in AWS and dedicated option enabled it will deploy 3 ODF workers(m5.4xlarge) using machinesets one per AZ, .
 dedicated: 
-  enabled: true
+  enabled: false
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
     clusterid: 'cluster-tlhvx-wmzb6'
@@ -73,7 +73,7 @@ osds:
 #Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
 #Storage Class that will be used to provision the ODF OSDs.
-  scname: 'gp2'
+  scname: 'gp3-csi'
 #Size of Each PV that will be provisioned to be used by the OSDs.
   disksize: '512Gi'
   portable: true
