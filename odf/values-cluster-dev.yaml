@@ -40,7 +40,7 @@ odf:
 
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
-  enabled: true
+  enabled: false
 # Enable/Disable RGW SSL
   ssl: false
 
