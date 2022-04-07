@@ -40,7 +40,7 @@ odf:
 
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
-  enabled: false
+  enabled: true
 # Enable/Disable RGW SSL
   ssl: false
 
@@ -69,7 +69,7 @@ osds:
   osdcount: 1
 #Enable cluster OSD encription
   encryption:
-    enabled: false
+    enabled: true
 #Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
 #Storage Class that will be used to provision the ODF OSDs.
