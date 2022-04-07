@@ -40,7 +40,7 @@ odf:
 
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
-  enabled: true
+  enabled: false
 # Enable/Disable RGW SSL
   ssl: false
 
@@ -57,7 +57,7 @@ dedicated:
   enabled: true
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
-    clusterid: 'cluster-6fktf-hrvxg'
+    clusterid: ''
     #youn can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}' 
     region: 'us-east-2'
     #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.ami.id}'
@@ -66,7 +66,7 @@ dedicated:
 # Configure StorageCluster
 osds:
 # Number of OSDs that will be deployed deployed, this is the count inside the deviceset, so setting 1 equals to 3 OSDs, 2 = 6 OSDs, etc. 
-  osdcount: 2
+  osdcount: 1
 #Enable cluster OSD encription
   encryption:
     enabled: true
