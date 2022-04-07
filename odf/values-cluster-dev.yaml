@@ -69,7 +69,7 @@ osds:
   osdcount: 1
 #Enable cluster OSD encription
   encryption:
-    enabled: true
+    enabled: false
 #Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
 #Storage Class that will be used to provision the ODF OSDs.
