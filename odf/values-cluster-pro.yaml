@@ -40,7 +40,7 @@ odf:
 
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
-  enabled: false
+  enabled: true
 # Enable/Disable RGW SSL
   ssl: false
 
@@ -66,7 +66,7 @@ dedicated:
 # Configure StorageCluster
 osds:
 # Number of OSDs that will be deployed deployed, this is the count inside the deviceset, so setting 1 equals to 3 OSDs, 2 = 6 OSDs, etc. 
-  osdcount: 1
+  osdcount: 2
 #Enable cluster OSD encription
   encryption:
     enabled: true
