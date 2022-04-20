@@ -3,6 +3,8 @@
 ##
 #
 
+#Nodes that have the label cluster.ocs.openshift.io/openshift-storage='' will
+#be used to discover local attach devices for LSO to use
 lso:
 # LSO version Channel
   channel: '4.10'
