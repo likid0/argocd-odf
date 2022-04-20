@@ -1,3 +1,4 @@
+{{- if not $.Values.mcgstandalone.enabled }}
 {{- if $.Values.dedicated.enabled }}
 ---
 apiVersion: machine.openshift.io/v1beta1
@@ -225,4 +226,5 @@ spec:
           userDataSecret:
             name: worker-user-data
 ---
+{{- end }}
 {{- end }}
