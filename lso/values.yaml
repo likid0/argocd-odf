@@ -1,0 +1,12 @@
+##
+# LSO Chart values
+##
+#
+
+lso:
+# LSO version Channel
+  channel: '4.10'
+# Number of discovered devices to use per node
+  devicecount: 1
+# Type of device to use, ignore Rotational Disks
+  type: NonRotational

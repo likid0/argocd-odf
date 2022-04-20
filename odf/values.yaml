@@ -3,6 +3,7 @@
 ##
 #
 
+
 ## If MCG multi cloud gateways stand alone is enabled, only MCG will be
 #deployed no ODF/Rook/Ceph components will be used, the default SC will be use
 #for the MCG database. 
