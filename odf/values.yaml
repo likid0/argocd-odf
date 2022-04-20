@@ -11,7 +11,7 @@
 #odf.noobaacore and odf.noobaadb values.
 
 mcgstandalone:
-  enabled: false
+  enabled: true
   scname: 'gp3-csi'
 
 odf:
@@ -34,17 +34,17 @@ odf:
   noobaacore:
     limits:
       cpu: 1
-      memory: 4Gi
+      memory: 2Gi
     requests:
       cpu: 1
-      memory: 4Gi
+      memory: 2Gi
   noobaadb:
     limits:
       cpu: 1
-      memory: 4Gi
+      memory: 2Gi
     requests:
       cpu: 1
-      memory: 4Gi
+      memory: 2Gi
   osd:
     requests:
       cpu: 2
