@@ -1,3 +1,4 @@
+{{- if not $.Values.mcgstandalone.enabled }}
 {{- if $.Values.rgw.enabled }}
 ---
 apiVersion: ceph.rook.io/v1
@@ -13,9 +14,9 @@ spec:
     erasureCoded:
       codingChunks: 0
       dataChunks: 0
-    failureDomain: zone
+    failureDomain: {{ $.Values.rgw.failuredomain }}
     replicated:
-      size: 3
+      size: {{ $.Values.osds.replicas }}
   gateway:
     instances: 2
     placement:
@@ -48,16 +49,17 @@ spec:
         service.beta.openshift.io/serving-cert-secret-name: ocs-storagecluster-cos-ceph-rgw-tls-cert
     resources:
       limits:
-        cpu: "2"
-        memory: 4Gi
+        cpu: '{{ .Values.odf.rgw.limits.cpu }}'
+        memory: {{ .Values.odf.rgw.limits.memory }}
       requests:
-        cpu: "1"
-        memory: 4Gi
+        cpu: '{{ .Values.odf.rgw.requests.cpu }}'
+        memory: {{ .Values.odf.rgw.requests.memory }}
   metadataPool:
     erasureCoded:
       codingChunks: 0
       dataChunks: 0
-    failureDomain: zone
+    failureDomain: {{ $.Values.rgw.failuredomain }}
     replicated:
-      size: 3
+      size: {{ $.Values.osds.replicas }}
+{{- end }}
 {{- end }}

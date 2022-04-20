@@ -1,3 +1,4 @@
+{{- if not $.Values.mcgstandalone.enabled }}
 {{- if $.Values.rgw.enabled }}
 ---
 kind: Route
@@ -25,4 +26,5 @@ spec:
     termination: edge
     insecureEdgeTerminationPolicy: Allow
   wildcardPolicy: None
+{{- end }}
 {{- end }}

@@ -1,3 +1,4 @@
+{{- if not $.Values.mcgstandalone.enabled }}
 {{- if $.Values.dedicated.enabled }}
 apiVersion: batch/v1
 kind: Job
@@ -29,4 +30,5 @@ spec:
       serviceAccountName: query-pods
       restartPolicy: Never
       terminationGracePeriodSeconds: 30
+{{- end }}
 {{- end }}
