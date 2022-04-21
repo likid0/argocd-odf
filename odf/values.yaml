@@ -12,7 +12,7 @@
 #odf.noobaacore and odf.noobaadb values.
 
 mcgstandalone:
-  enabled: true
+  enabled: false
   scname: 'gp3-csi'
 
 odf:
