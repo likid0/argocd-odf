@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
-  channel: "4.9"
+  channel: {{ .Values.lso.devicecount }}
   installPlanApproval: Automatic
   name: local-storage-operator
   source: redhat-operators 
