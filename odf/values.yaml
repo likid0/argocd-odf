@@ -101,8 +101,10 @@ osds:
 #Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
 #Storage Class that will be used to provision the ODF OSDs. If using LSO set it
-#to 'local-block'
+#to 'local-block', also take into account the disksize has to be the same or
+#smaller than the PVs created by LSO.
   scname: 'local-block'
 #Size of Each PV that will be provisioned to be used by the OSDs.
-  disksize: '512Gi'
-  portable: true
+#  disksize: '512Gi'
+  disksize: '255Gi'
+  portable: false
