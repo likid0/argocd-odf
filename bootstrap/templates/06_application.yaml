@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: openshift-storage
+    namespace: '{{ $val.namespace }}'
     server: 'https://kubernetes.default.svc'
   source:
     path: '{{ $val.path }}'
