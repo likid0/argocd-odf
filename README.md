@@ -21,7 +21,9 @@ bootstrap/values.yaml
 odf/values.yaml
 ```
 
-- If LSO is going to be used as target PVs for OSDs also modify LSO values
+- If LSO is going to be used as target PVs for OSDs also modify LSO values, LSO
+  will only discover local disks on nodes with the
+  cluster.ocs.openshift.io/openshift-storage='' label.
 
 ```
 lso/values.yaml

@@ -16,7 +16,6 @@ spec:
               - ""
   storageClassName: localblock
   volumeMode: Block
-  fstype: ext4
   maxDeviceCount: {{ .Values.lso.devicecount }}
   deviceInclusionSpec:
     deviceTypes:
