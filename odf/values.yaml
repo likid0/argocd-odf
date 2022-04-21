@@ -100,8 +100,9 @@ osds:
     enabled: false
 #Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
-#Storage Class that will be used to provision the ODF OSDs.
-  scname: 'gp3-csi'
+#Storage Class that will be used to provision the ODF OSDs. If using LSO set it
+#to 'local-block'
+  scname: 'local-block'
 #Size of Each PV that will be provisioned to be used by the OSDs.
   disksize: '512Gi'
   portable: true
