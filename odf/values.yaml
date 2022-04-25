@@ -70,11 +70,11 @@ rgw:
   ssl: false
 # Failure domain, by default zone, depeding on your deployment you may need to
 # change it to rack or node.
-  failuredomain: zone
+  failuredomain: host
 
 # If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.
 mcg:
-  enabled: false
+  enabled: true
 
 # Deploy CephTools with ODF
 cephtools:
@@ -103,8 +103,8 @@ osds:
 #Storage Class that will be used to provision the ODF OSDs. If using LSO set it
 #to 'local-block', also take into account the disksize has to be the same or
 #smaller than the PVs created by LSO.
-  scname: 'localblock'
+  scname: 'thin'
 #Size of Each PV that will be provisioned to be used by the OSDs.
-#  disksize: '512Gi'
-  disksize: '255Gi'
-  portable: false
+  disksize: '512Gi'
+#  disksize: '255Gi'
+  portable: true
