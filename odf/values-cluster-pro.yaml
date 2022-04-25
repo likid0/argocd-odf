@@ -54,10 +54,10 @@ cephtools:
 
 # If OCP Cluster is deployed in AWS and dedicated option enabled it will deploy 3 ODF workers(m5.4xlarge) using machinesets one per AZ, .
 dedicated: 
-  enabled: false
+  enabled: true
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
-    clusterid: 'cluster-gtlkx-4m5pf'
+    clusterid: 'cluster-5nhkr-7frsr'
     #youn can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.placement.region}' 
     region: 'us-east-2'
     #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.ami.id}'
