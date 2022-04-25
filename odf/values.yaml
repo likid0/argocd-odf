@@ -10,7 +10,9 @@
 #
 #You can configure the limit/requests for MCG standalone by modifiying the
 #odf.noobaacore and odf.noobaadb values.
-
+#
+##IMPORTANT: if mcgstandalone is set to enabled: true no other ODF components
+#will get deployed.
 mcgstandalone:
   enabled: false
   scname: 'gp3-csi'
@@ -74,7 +76,7 @@ rgw:
 
 # If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.
 mcg:
-  enabled: false
+  enabled: true
 
 # Deploy CephTools with ODF
 cephtools:
@@ -101,10 +103,10 @@ osds:
 #Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
 #Storage Class that will be used to provision the ODF OSDs. If using LSO set it
-#to 'local-block', also take into account the disksize has to be the same or
+#to 'localblock', also take into account the disksize has to be the same or
 #smaller than the PVs created by LSO.
-  scname: 'localblock'
+  scname: 'thin'
 #Size of Each PV that will be provisioned to be used by the OSDs.
-#  disksize: '512Gi'
-  disksize: '255Gi'
-  portable: false
+  disksize: '512Gi'
+    #  disksize: '255Gi'
+  portable: true

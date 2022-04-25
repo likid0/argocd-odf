@@ -1,0 +1,8 @@
+apiVersion: objectbucket.io/v1alpha1
+kind: ObjectBucketClaim
+metadata:
+  name: oadp-s3-bucket
+  namespace: adp-operator
+spec:
+  generateBucketName: oadp-s3-bucket
+  storageClassName: openshift-storage.noobaa.io

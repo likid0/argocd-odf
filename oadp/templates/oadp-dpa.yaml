@@ -1,0 +1,32 @@
+apiVersion: oadp.openshift.io/v1alpha1
+kind: DataProtectionApplication
+metadata:
+  name: dpa-rgw-odf
+  namespace: openshift-adp
+spec:
+  backupLocations:
+  - velero:
+      backupSyncPeriod: 2m0s
+      config:
+        profile: default
+        region: us-east-1
+        s3ForcePathStyle: "true"
+        s3Url: http://s3-rgw-openshift-storage.apps.cluster-73f0.73f0.example.opentlc.com/
+      credential:
+        key: cloud
+        name: cloud-credentials
+      default: true
+      objectStorage:
+        bucket: oadp-s3-bucket-4191de2c-002b-4330-9192-fe7f10e5b5d2
+        prefix: velero
+      provider: aws
+  configuration:
+    restic:
+      enable: true
+    velero:
+      defaultPlugins:
+      - openshift
+      - aws
+      - csi
+      featureFlags:
+      - EnableCSI

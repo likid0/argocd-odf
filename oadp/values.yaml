@@ -1,0 +1,15 @@
+##
+# OADP Chart values
+##
+#
+
+
+oadp:
+# OADP Version/Channel
+#  channel: 'stable-4.9'
+  channel: 'stable-1.0'
+# Resource limits per service
+  mon:
+    requests:
+       cpu: 1
+       memory: 2Gi
