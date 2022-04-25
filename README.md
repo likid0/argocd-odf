@@ -15,7 +15,10 @@ gh repo fork  git@github.com:likid0/argocd-odf.git --clone
 ```
 bootstrap/values.yaml
 ```
-- Related to ODF deployment: 
+- Related to ODF deployment, if not deploying in AWS with dedicated nodes, you
+  need to label the worker nodes with
+  cluster.ocs.openshift.io/openshift-storage='' for ODF to use them during
+  deployment
 
 ```
 odf/values.yaml
