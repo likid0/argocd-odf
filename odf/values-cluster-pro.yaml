@@ -40,7 +40,7 @@ odf:
 
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
-  enabled: true
+  enabled: false
 # Enable/Disable RGW SSL
   ssl: false
 
@@ -54,7 +54,7 @@ cephtools:
 
 # If OCP Cluster is deployed in AWS and dedicated option enabled it will deploy 3 ODF workers(m5.4xlarge) using machinesets one per AZ, .
 dedicated: 
-  enabled: true
+  enabled: false
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
     clusterid: 'cluster-gtlkx-4m5pf'
@@ -66,7 +66,7 @@ dedicated:
 # Configure StorageCluster
 osds:
 # Number of OSDs that will be deployed deployed, this is the count inside the deviceset, so setting 1 equals to 3 OSDs, 2 = 6 OSDs, etc. 
-  osdcount: 2
+  osdcount: 1
 #Enable cluster OSD encription
   encryption:
     enabled: true
