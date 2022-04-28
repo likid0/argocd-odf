@@ -64,7 +64,7 @@ spec:
   storageDeviceSets:
   - config: {}
     {{- if eq $.Values.osds.scname "localblock" }}
-    count: {{ default "3" $.Values.osds.devicesetcount }}
+    count: {{ default "1" $.Values.osds.devicesetcount }}
     {{- else}}
     count: {{ default "1" $.Values.osds.devicesetcount }}
     {{- end }}
@@ -85,7 +85,11 @@ spec:
       status: {}
     name: ocs-deviceset-{{ $.Values.osds.scname }}
     placement: {}
+    {{- if eq $.Values.osds.scname "localblock" }}
+    portable: false
+    {{- else}}
     portable: true
+    {{- end }}
     preparePlacement: {}
     replica: {{ $.Values.osds.replicas }}
     resources:
