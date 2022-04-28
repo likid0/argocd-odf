@@ -19,7 +19,7 @@ spec:
   flexibleScaling: {{ default "true" $.Values.odf.flexibleScaling }}
   {{- else}}
   flexibleScaling: {{ default "false" $.Values.odf.flexibleScaling }}
-  {{ end }}
+  {{- end }}
   encryption:
   {{- if $.Values.osds.encryption.enabled }}
     enable: true
