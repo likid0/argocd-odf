@@ -15,7 +15,7 @@ apps:
     namespace: openshift-storage
   deploy-lso:
     branch: main
-    enabled: false
+    enabled: true
     path: lso/
     autosync: false
     namespace: openshift-local-storage
