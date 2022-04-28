@@ -75,7 +75,11 @@ spec:
         - ReadWriteOnce
         resources:
           requests:
+            {{- if eq $.Values.osds.scname "localblock" }}
+            storage: 1
+            {{- else}}
             storage: {{ $.Values.osds.disksize }}
+            {{- end }}
         storageClassName: {{ $.Values.osds.scname }}
         volumeMode: Block
       status: {}
