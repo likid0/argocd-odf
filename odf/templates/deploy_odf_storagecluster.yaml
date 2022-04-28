@@ -39,6 +39,9 @@ spec:
   multiCloudGateway:
     reconcileStrategy: ignore
   {{- end }}
+  {{- if eq $.Values.osds.scname "localblock" }}
+  monDataDirHostPath: /var/lib/rook
+  {{- end }}
   nodeTopologies: {}
   resources:
     mon:
