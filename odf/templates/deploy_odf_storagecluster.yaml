@@ -58,7 +58,7 @@ spec:
         memory: {{ .Values.odf.noobaadb.requests.memory }}
   storageDeviceSets:
   - config: {}
-    count: {{ $.Values.osds.osdcount }}
+    count: {{ default "1" $.Values.osds.osdcount }}
     dataPVCTemplate:
       metadata: {}
       spec:

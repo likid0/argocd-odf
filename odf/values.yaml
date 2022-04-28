@@ -70,7 +70,7 @@ rgw:
   ssl: false
 # Failure domain, by default zone, depeding on your deployment you may need to
 # change it to rack or node.
-  failuredomain: host
+  failuredomain: zone
 
 # If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.
 mcg:
@@ -101,7 +101,7 @@ osds:
 #Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
 #Storage Class that will be used to provision the ODF OSDs. If using LSO set it
-#to 'local-block', also take into account the disksize has to be the same or
+#to 'localblock', also take into account the disksize has to be the same or
 #smaller than the PVs created by LSO.
   scname: 'gp2'
 #Size of Each PV that will be provisioned to be used by the OSDs.
