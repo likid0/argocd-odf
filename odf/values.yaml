@@ -97,7 +97,7 @@ dedicated:
 # Configure StorageCluster
 osds:
 # Number of OSDs that will be deployed, this is the count inside the deviceset,For LSO set this number to the number of OSDS, For Dynamic provisioning setting 1 equals to 3 OSDs, 2 = 6 OSDs, etc. 
-  devicesetcount: 1 
+  devicesetcount: 3
 #Enable cluster OSD encription
   encryption:
     enabled: false
@@ -106,7 +106,7 @@ osds:
 #Storage Class that will be used to provision the ODF OSDs. If using LSO set it
 #to 'localblock', also take into account the disksize has to be the same or
 #smaller than the PVs created by LSO.
-  scname: 'gp2'
+  scname: 'localblock'
 #Size of Each PV that will be provisioned to be used by the OSDs.
   disksize: '512Gi'
 #  disksize: '255Gi'
