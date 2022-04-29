@@ -92,13 +92,14 @@ dedicated:
 
 # Configure StorageCluster
 osds:
-# Number of OSDs that will be deployed, this is the count inside the deviceset, setting 1 equals to 3 OSDs, 2 = 6 OSDs, etc. 
+# Number of OSDs that will be deployed, if replica is set to 3 by defau,t, setting 1 here equals to 3 OSDs, 2 = 6 OSDs, etc.
+# If replica is set to 1 , setting 1 in devicesetcount will get you 1 OSD.
   devicesetcount: 1
 #Enable cluster OSD encription
   encryption:
     enabled: false
-#Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
-  replicas: 3
+#Number of replicas for the device set configuration. Set to 3 by default.
+#  replicas: 3
 #Storage Class that will be used to provision the ODF OSDs. If using LSO set it to 'localblock'
   scname: 'localblock'
 #Size of Each PV that will be provisioned to be used by the OSDs.

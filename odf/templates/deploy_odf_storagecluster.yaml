@@ -94,7 +94,7 @@ spec:
     portable: true
     {{- end }}
     preparePlacement: {}
-    replica: {{ $.Values.osds.replicas }}
+    replica: {{ default "3 " $.Values.osds.replicas }}
     resources:
         limits:
           cpu: '{{ .Values.odf.osd.limits.cpu }}'
