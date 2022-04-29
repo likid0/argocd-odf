@@ -7,7 +7,11 @@
 # Install Operators
 echo "Installing ArgoCD operator..."
 oc apply -f ./bootstrap/argocd-operator.yaml
-sleep 60
+sleep 30
+
+echo "Installing Tekton operator..."
+oc apply -f ./bootstrap/tekton-operator.yaml
+sleep 30 
 
 waitoperatorpod() {
   sleep 10
@@ -18,8 +22,13 @@ waitoperatorpod() {
 
 echo "Waiting for Operators to be ready..."
 waitoperatorpod gitops
+waitoperatorpod pipelines
 
 
 echo "Creating Project and Applications in openshift-gitops namespace"
 oc project openshift-gitops
 helm template ./bootstrap/  --debug   | oc apply -f -
+
+
+# Notifications
+read -p "Please configure GitHub weebhooks in order to notify code changes to Tekton automatically..."

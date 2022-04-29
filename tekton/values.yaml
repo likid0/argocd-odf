@@ -1,0 +1,34 @@
+# Type of pipelines
+pipeTypes:
+  - nodejs
+  - golang
+  - python
+  - java
+
+# Production Branch
+gitBranchPro: master
+gitBranchDev: develop
+
+# Namespaces config 
+namespaceDev: jump-app-dev
+namespacePre: jump-app-pre
+namespacePro: jump-app-pro
+namespaceGitOps: gitops-argocd
+
+
+# Global variables
+global:
+
+  # Public domain where apps will be published
+  appsDomain: apps.acidonpe.sandbox1736.opentlc.com
+
+  # Jump microservices settings
+  apps:
+    front-javascript:
+      build: is
+      imagestream: nodejs:latest
+      imagestreamNamespace: openshift
+      versions:
+        - v1
+      gitRepo: https://github.com/acidonper/jump-app-typescrypt-react.git
+      type: nodejs
