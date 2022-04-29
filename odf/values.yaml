@@ -97,7 +97,7 @@ dedicated:
 # Configure StorageCluster
 osds:
 # Number of OSDs that will be deployed, this is the count inside the deviceset,For LSO set this number to the number of OSDS, For Dynamic provisioning setting 1 equals to 3 OSDs, 2 = 6 OSDs, etc. 
-  devicesetcount: 1
+  devicesetcount: 2
 #Enable cluster OSD encription
   encryption:
     enabled: false
