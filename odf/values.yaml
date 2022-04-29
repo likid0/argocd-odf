@@ -1,25 +1,21 @@
 ##
-# ODF Chart values
+# ODF Chart Values File.
 ##
 #
 
 
 ## If MCG multi cloud gateways stand alone is enabled, only MCG will be
-#deployed no ODF/Rook/Ceph components will be used, the default SC will be use
-#for the MCG database. 
-#
-#You can configure the limit/requests for MCG standalone by modifiying the
-#odf.noobaacore and odf.noobaadb values.
-
+#deployed no ODF/Rook/Ceph components will get installed.
 mcgstandalone:
   enabled: false
+# IF deploying MCG standalone the storage claas that will be used for the
+# Noobaa Database, and PV backing store on-premise.
   scname: 'gp3-csi'
 
 odf:
 # ODF Version/Channel
-#  channel: 'stable-4.9'
   channel: 'stable-4.10'
-# Resource limits per service
+# Resource request/limits per service
   mon:
     requests:
        cpu: 1
@@ -68,8 +64,8 @@ rgw:
   enabled: true
 # Enable S3 RGW endpoint with SSL
   ssl: false
-# Failure domain, by default zone, depeding on your deployment you may need to
-# change it to rack or node.
+# Failure domain for the RGW pools, by default zone, depeding on your deployment you may need to
+# change it to rack, zone or node.
   failuredomain: zone
 
 # If mcg enabled is set to False Nooba/Multicloud gateway will not be deployed.
@@ -91,22 +87,19 @@ dedicated:
     #you can use $oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].spec.template.spec.providerSpec.value.ami.id}'
     coreosami: 'ami-03d9208319c96db0c'
 
-# Enable Flexible Scaling
+# Enable Flexible scaling.
 # flexibleScaling: false
 
 # Configure StorageCluster
 osds:
-# Number of OSDs that will be deployed, this is the count inside the deviceset,For LSO set this number to the number of OSDS, For Dynamic provisioning setting 1 equals to 3 OSDs, 2 = 6 OSDs, etc. 
-  devicesetcount: 2
+# Number of OSDs that will be deployed, this is the count inside the deviceset, setting 1 equals to 3 OSDs, 2 = 6 OSDs, etc. 
+  devicesetcount: 1
 #Enable cluster OSD encription
   encryption:
     enabled: false
 #Number of replicas for the default pools created for the ouf of the box ODF Storage Classes
   replicas: 3
-#Storage Class that will be used to provision the ODF OSDs. If using LSO set it
-#to 'localblock', also take into account the disksize has to be the same or
-#smaller than the PVs created by LSO.
+#Storage Class that will be used to provision the ODF OSDs. If using LSO set it to 'localblock'
   scname: 'localblock'
 #Size of Each PV that will be provisioned to be used by the OSDs.
   disksize: '512Gi'
-#  disksize: '255Gi'
