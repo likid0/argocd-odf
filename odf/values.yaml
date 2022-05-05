@@ -61,7 +61,7 @@ odf:
 
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw: 
-  enabled: true
+  enabled: false
 # Enable S3 RGW endpoint with SSL
   ssl: false
 # Failure domain for the RGW pools, by default zone, depeding on your deployment you may need to
@@ -101,6 +101,6 @@ osds:
 #Number of replicas for the device set configuration. Set to 3 by default.
 #  replicas: 3
 #Storage Class that will be used to provision the ODF OSDs. If using LSO set it to 'localblock'
-  scname: 'localblock'
+  scname: 'thin'
 #Size of Each PV that will be provisioned to be used by the OSDs.
   disksize: '512Gi'
