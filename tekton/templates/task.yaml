@@ -8,12 +8,6 @@ spec:
     - description: The name of the argocdapp
       name: argoapp
       type: string
-    - description: The name of the app
-      name: app
-      type: string
-    - description: The name of the app commit
-      name: commit
-      type: string
   stepTemplate:
     envFrom:
       - secretRef:

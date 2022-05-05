@@ -1,19 +1,11 @@
-# Type of pipelines
-pipeTypes:
-  - nodejs
-  - golang
-  - python
-  - java
-
-# Production Branch
-gitBranchPro: master
-gitBranchDev: develop
+# Branch
+gitBranchPro: main
 
 # Namespaces config 
-namespaceDev: jump-app-dev
-namespacePre: jump-app-pre
-namespacePro: jump-app-pro
-namespaceGitOps: gitops-argocd
+namespaceInfra: openshift-machine-api
+namespaceODF: openshift-storage
+namespaceLSO: openshift-local-storage
+namespaceGitOps: openshift-gitops
 
 
 # Global variables
