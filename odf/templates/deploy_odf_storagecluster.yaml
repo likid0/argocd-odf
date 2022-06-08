@@ -34,7 +34,12 @@ spec:
     cephDashboard: {}
     cephFilesystems: {}
     cephObjectStoreUsers: {}
+    {{- if eq $.Values.rgw.instances "1" }}
     cephObjectStores: {}
+    {{- else}}
+    cephObjectStores:
+      gatewayInstances: {{ .Values.rgw.instances }}
+    {{- end }}
   {{- if not $.Values.mcg.enabled }}
   multiCloudGateway:
     reconcileStrategy: ignore
