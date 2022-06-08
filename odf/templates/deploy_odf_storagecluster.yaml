@@ -57,6 +57,10 @@ spec:
       requests:
         cpu: '{{ .Values.odf.mds.requests.cpu }}'
         memory: {{ .Values.odf.mds.requests.memory }}
+    rgw:
+      requests:
+        cpu: '{{ .Values.odf.rgw.requests.cpu }}'
+        memory: {{ .Values.odf.rgw.requests.memory }}
     mgr:
       requests:
         cpu: '{{ .Values.odf.mgr.requests.cpu }}'
